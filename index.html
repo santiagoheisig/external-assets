@@ -10,17 +10,19 @@
     60% {transform: scale(1.2);opacity: 1;}
     100% {transform: scale(1);}
 }
-
+@keyframes girando {
+    0% {transform: rotate(0deg); transform-origin: 50% 50%;}
+    100% {transform: rotate(360deg);transform-origin: 50% 50%;}
+}
 .pepe{
     height:100px; 
-    width:100px; 
-    border-radius:50%;
+    width:200px; 
     
-    animation-name: bounceIn;
+    animation-name: girando;
     animation-duration: 2s; 
     animation-iteration-count:infinite;
     
-    -webkit-animation-name: bounceIn;
+    -webkit-animation-name: girando;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count:infinite;
 }
@@ -28,9 +30,15 @@
 </head>
 <body>
 
-<div class='pepe'>
+<div onclick="ocultar();"  id="dados" class='pepe'>
 <img src="dados.png" width="100%" /> 
 </div>
 
+<script>
+function ocultar(){
+    dados = document.getElementById('dados');
+    dados.style.display = 'none';
+}
+</script>
 </body>
 </html>
